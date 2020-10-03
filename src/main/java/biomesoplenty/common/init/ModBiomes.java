@@ -30,12 +30,12 @@ import biomesoplenty.api.biome.BOPBiomes;
 import biomesoplenty.api.biome.IExtendedBiome;
 import biomesoplenty.api.config.IConfigObj;
 import biomesoplenty.api.enums.BOPClimates;
-import biomesoplenty.common.biome.nether.BOPHellBiome;
-import biomesoplenty.common.biome.nether.BiomeCorruptedSands;
-import biomesoplenty.common.biome.nether.BiomeFungiForest;
-import biomesoplenty.common.biome.nether.BiomePhantasmagoricInferno;
-import biomesoplenty.common.biome.nether.BiomeUndergarden;
-import biomesoplenty.common.biome.nether.BiomeVisceralHeap;
+//import biomesoplenty.common.biome.nether.BOPHellBiome;
+//import biomesoplenty.common.biome.nether.BiomeCorruptedSands;
+//import biomesoplenty.common.biome.nether.BiomeFungiForest;
+//import biomesoplenty.common.biome.nether.BiomePhantasmagoricInferno;
+//import biomesoplenty.common.biome.nether.BiomeUndergarden;
+//import biomesoplenty.common.biome.nether.BiomeVisceralHeap;
 import biomesoplenty.common.biome.overworld.BOPOverworldBiome;
 import biomesoplenty.common.biome.overworld.BiomeGenAlps;
 import biomesoplenty.common.biome.overworld.BiomeGenBambooForest;
@@ -134,7 +134,7 @@ import biomesoplenty.common.biome.vanilla.BiomeExtTaiga;
 import biomesoplenty.common.biome.vanilla.BiomeExtTaigaHills;
 import biomesoplenty.common.command.BOPCommand;
 import biomesoplenty.common.util.config.BOPConfig;
-import biomesoplenty.common.world.WorldProviderBOPHell;
+//import biomesoplenty.common.world.WorldProviderBOPHell;
 import biomesoplenty.common.world.WorldTypeBOP;
 import biomesoplenty.core.BiomesOPlenty;
 import net.minecraft.init.Biomes;
@@ -220,7 +220,7 @@ public class ModBiomes implements BOPBiomes.IBiomeRegistry
         //After normal biomes to account for adding custom beaches
         initExtendedBiomes();
         
-        registerNetherOverride();
+        //registerNetherOverride();
 
         // save the biome ids to the config file (creating it if it doesn't exist)
         BOPConfig.writeFile(biomeIdMapFile, biomeIdMap);
@@ -354,11 +354,11 @@ public class ModBiomes implements BOPBiomes.IBiomeRegistry
         addIslandBiome(flower_island, 7);
 
         // nether biomes
-        corrupted_sands = registerNetherBiome(new BiomeCorruptedSands());
-        fungi_forest = registerNetherBiome(new BiomeFungiForest());
-        phantasmagoric_inferno = registerNetherBiome(new BiomePhantasmagoricInferno());
-        undergarden = registerNetherBiome(new BiomeUndergarden());
-        visceral_heap = registerNetherBiome(new BiomeVisceralHeap());
+       // corrupted_sands = registerNetherBiome(new BiomeCorruptedSands());
+       // fungi_forest = registerNetherBiome(new BiomeFungiForest());
+       // phantasmagoric_inferno = registerNetherBiome(new BiomePhantasmagoricInferno());
+       // undergarden = registerNetherBiome(new BiomeUndergarden());
+       // visceral_heap = registerNetherBiome(new BiomeVisceralHeap());
     }
     
     public static void initExtendedBiomes()
@@ -394,7 +394,7 @@ public class ModBiomes implements BOPBiomes.IBiomeRegistry
         swampland_extension = registerWrappedBiome(new BiomeExtSwampland());
         taiga_extension = registerWrappedBiome(new BiomeExtTaiga());
         taiga_hills_extension = registerWrappedBiome(new BiomeExtTaigaHills());
-        hell_extension = registerWrappedBiome(new BiomeExtHell());
+       // hell_extension = registerWrappedBiome(new BiomeExtHell());
         beach_extension = registerWrappedBiome(new BiomeExtBeach());
     }
     
@@ -475,15 +475,15 @@ public class ModBiomes implements BOPBiomes.IBiomeRegistry
         registerBiomeToDictionary(BOPBiomes.white_beach, Type.BEACH);
         registerBiomeToDictionary(BOPBiomes.origin_beach, Type.BEACH, Type.RARE);
         
-        registerBiomeToDictionary(BOPBiomes.corrupted_sands, Type.NETHER, Type.HOT, Type.DRY, Type.SANDY, Type.DENSE);
-        registerBiomeToDictionary(BOPBiomes.fungi_forest, Type.NETHER, Type.HOT, Type.MUSHROOM, Type.DENSE);
-        registerBiomeToDictionary(BOPBiomes.phantasmagoric_inferno, Type.NETHER, Type.HOT, Type.WASTELAND, Type.DRY, Type.MAGICAL, Type.SPOOKY);
-        registerBiomeToDictionary(BOPBiomes.undergarden, Type.NETHER, Type.HOT, Type.LUSH);
-        registerBiomeToDictionary(BOPBiomes.visceral_heap, Type.NETHER, Type.HOT, Type.WET);
+       // registerBiomeToDictionary(BOPBiomes.corrupted_sands, Type.NETHER, Type.HOT, Type.DRY, Type.SANDY, Type.DENSE);
+       // registerBiomeToDictionary(BOPBiomes.fungi_forest, Type.NETHER, Type.HOT, Type.MUSHROOM, Type.DENSE);
+       // registerBiomeToDictionary(BOPBiomes.phantasmagoric_inferno, Type.NETHER, Type.HOT, Type.WASTELAND, Type.DRY, Type.MAGICAL, Type.SPOOKY);
+       // registerBiomeToDictionary(BOPBiomes.undergarden, Type.NETHER, Type.HOT, Type.LUSH);
+       // registerBiomeToDictionary(BOPBiomes.visceral_heap, Type.NETHER, Type.HOT, Type.WET);
         
     }
     
-    public static void registerNetherOverride()
+    /*public static void registerNetherOverride()
     {
     	//Unregister vanilla Nether dimension
     	DimensionManager.unregisterDimension(-1);
@@ -491,7 +491,7 @@ public class ModBiomes implements BOPBiomes.IBiomeRegistry
     	//Add override
         DimensionType netherBOP = DimensionType.register("Nether", "_nether", -1, WorldProviderBOPHell.class, false);
         DimensionManager.registerDimension(-1, netherBOP);
-    }
+    }**/
     
     @Override
     public IExtendedBiome registerBiome(IExtendedBiome extendedBiome, String idName)
@@ -651,7 +651,7 @@ public class ModBiomes implements BOPBiomes.IBiomeRegistry
         }
     }
 
-    private static Optional<Biome> registerNetherBiome(BOPHellBiome biome)
+    /*private static Optional<Biome> registerNetherBiome(BOPHellBiome biome)
     {
         String idName = biome.getResourceLocation().getResourcePath();
         Integer id = biomeIdMapConf.getInt(idName, null);
@@ -671,7 +671,7 @@ public class ModBiomes implements BOPBiomes.IBiomeRegistry
         } else {
             return Optional.absent();
         }
-    }
+    }**/
     
     private static void registerBiomeToDictionary(Optional<Biome> biome, Type...types)
     {

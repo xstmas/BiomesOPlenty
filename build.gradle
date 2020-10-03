@@ -83,18 +83,6 @@ processResources {
 
 import groovy.io.FileType
 
-task changelog(type: JenkinsChangelog) {
-    outputs.upToDateWhen { false } // Refresh changelog for every build
-    def buildNumber = "${System.getenv().BUILD_NUMBER}"
-
-    serverRoot = 'http://ci.jenkins.minecraftforge.net/'
-    jobName = 'BiomesOPlenty'
-    authName = project.getProperty('forgeJenkinsUsername')
-    authPassword = project.getProperty('forgeJenkinsPassword')
-    targetBuild = buildNumber.toString()
-    output = 'build/libs/' + project.getName() + '-' + project.version + '-changelog.txt'
-}
-
 uploadArchives.dependsOn 'changelog'
 
 task sourcesJar(type: Jar) {
@@ -150,19 +138,10 @@ task listOutputs << {
 tasks.build.finalizedBy('listOutputs')
 
 artifacts {
-    archives changelog.output
+    //archives changelog.output
     archives sourcesJar
     archives deobfJar
     archives apiJar
-}
-
-curseforge {
-    apiKey = project.getProperty('curseApiKey')
-    project {
-        id = '220318'
-        changelog = file('build/libs/' + project.getName() + '-' + project.version + '-changelog.txt')
-        releaseType = 'beta'
-    }
 }
 
 uploadArchives {

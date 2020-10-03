@@ -82,7 +82,7 @@ public class BOPWorldSettings implements IBOPWorldSettings
     public boolean generateQuicksand = true;
     public boolean generateLiquidPoison = true;
     public boolean generateHotSprings = true;
-    public boolean generateNetherHives = true;
+    //public boolean generateNetherHives = true;
     public boolean generateEndFeatures = true;
     
     
@@ -139,7 +139,7 @@ public class BOPWorldSettings implements IBOPWorldSettings
         obj.addProperty("generateQuicksand", this.generateQuicksand);
         obj.addProperty("generateLiquidPoison", this.generateLiquidPoison);
         obj.addProperty("generateHotSprings", this.generateHotSprings);
-        obj.addProperty("generateNetherHives", this.generateNetherHives);
+        //obj.addProperty("generateNetherHives", this.generateNetherHives);
         obj.addProperty("generateEndFeatures", this.generateEndFeatures);
         obj.addProperty("mainNoiseScaleX", this.mainNoiseScaleX);
         obj.addProperty("mainNoiseScaleY", this.mainNoiseScaleY);
@@ -171,7 +171,7 @@ public class BOPWorldSettings implements IBOPWorldSettings
         this.generateQuicksand = worldConfig.getBool("generateQuicksand", this.generateQuicksand);
         this.generateLiquidPoison = worldConfig.getBool("generateLiquidPoison", this.generateLiquidPoison);
         this.generateHotSprings = worldConfig.getBool("generateHotSprings", this.generateHotSprings);
-        this.generateNetherHives = worldConfig.getBool("generateNetherHives", this.generateNetherHives);
+        //this.generateNetherHives = worldConfig.getBool("generateNetherHives", this.generateNetherHives);
         this.generateEndFeatures = worldConfig.getBool("generateEndFeatures", this.generateEndFeatures);
         this.mainNoiseScaleX = worldConfig.getFloat("mainNoiseScaleX", this.mainNoiseScaleX);
         this.mainNoiseScaleY = worldConfig.getFloat("mainNoiseScaleY", this.mainNoiseScaleY);
@@ -198,7 +198,7 @@ public class BOPWorldSettings implements IBOPWorldSettings
         this.generateQuicksand = true; 
         this.generateLiquidPoison = true; 
         this.generateHotSprings = true;
-        this.generateNetherHives = true;
+        //this.generateNetherHives = true;
         this.generateEndFeatures = true;
         
         // Vanilla default values
@@ -252,8 +252,8 @@ public class BOPWorldSettings implements IBOPWorldSettings
             return this.generateLiquidPoison;
         case HOT_SPRINGS: 
             return this.generateHotSprings;
-        case NETHER_HIVES: 
-            return this.generateNetherHives;
+        //case NETHER_HIVES: 
+        //    return this.generateNetherHives;
         case END_FEATURES:
             return this.generateEndFeatures;
 
